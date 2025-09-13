@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rádio Semear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .container {
+            background-image: url('https://placehold.co/1920x1080/4f46e5/ffffff?text=Céu+e+Nuvens');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="container relative flex flex-col items-center justify-center w-full max-w-xl mx-auto p-8 rounded-2xl shadow-xl overflow-hidden text-center bg-white bg-opacity-90 backdrop-blur-sm">
+        <!-- Overlay for visual effect -->
+        <div class="absolute inset-0 bg-gradient-to-t from-purple-800/80 to-indigo-600/60 z-0"></div>
+        
+        <div class="relative z-10 flex flex-col items-center">
+            <!-- Logo e Nome da Rádio -->
+            <svg class="h-24 w-24 text-white mb-4 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm9-2h-2a2 2 0 00-2 2v4a2 2 0 002 2h2a2 2 0 002-2v-4a2 2 0 00-2-2zM9 9V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-2 drop-shadow-lg">
+                Rádio Semear
+            </h1>
+            <p class="text-xl sm:text-2xl font-semibold text-indigo-200 mb-6 drop-shadow">
+                Louvor e a Palavra de Deus Online
+            </p>
+
+            <!-- Informação da Música/Pregação -->
+            <div id="radio-info" class="w-full text-white bg-white/20 backdrop-blur-md rounded-xl p-4 mb-8 transition-all duration-300 shadow-lg">
+                <p id="current-track" class="text-lg font-bold">Carregando...</p>
+            </div>
+
+            <!-- Player de Áudio -->
+            <div class="w-full">
+                <audio id="radio-player" class="w-full h-12 rounded-full" controls autoplay>
+                    <!-- **AQUI VOCÊ VAI INSERIR O SEU LINK DE STREAMING** -->
+                    <source src="SEU_LINK_DO_STREAM_AQUI" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+
+            <!-- Botão de Compartilhar e Redes Sociais -->
+            <div class="w-full mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://www.facebook.com/" target="_blank" class="flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-full font-bold shadow-md hover:bg-gray-200 transition-colors duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22.5 12c0-5.429-4.571-9.929-10-9.929S2.5 6.571 2.5 12c0 4.908 3.55 8.954 8.192 9.805v-6.958h-2.583v-2.847h2.583V9.521c0-2.564 1.5-3.958 3.827-3.958 1.144 0 2.128.085 2.42.123v2.85h-1.685c-1.326 0-1.587.629-1.587 1.551v2.039h3.184l-.514 2.847h-2.67V21.805C18.95 20.954 22.5 16.908 22.5 12z" clip-rule="evenodd" />
+                    </svg>
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="flex items-center justify-center gap-2 px-6 py-3 bg-white text-pink-600 rounded-full font-bold shadow-md hover:bg-gray-200 transition-colors duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2.163c3.204 0 3.585.016 4.858.071L17.275 2c3.045 0 3.488.016 4.636.069a6.007 6.007 0 011.697 1.054A6.007 6.007 0 0124 5.768v1.171c0 1.148.016 1.591.069 4.636l.071 1.082c.053 1.273.069 1.654.069 4.858 0 3.204-.016 3.585-.069 4.858L24 20.725c0 3.045-.016 3.488-.069 4.636a6.007 6.007 0 01-1.054 1.697c-.779.779-1.697 1.054-4.636 1.069l-1.082.071c-1.273.053-1.654.069-4.858.069s-3.585-.016-4.858-.069L2.725 24c-3.045 0-3.488-.016-4.636-.069a6.007 6.007 0 01-1.697-1.054A6.007 6.007 0 010 18.232v-1.171c0-1.148-.016-1.591-.069-4.636L.071 12c-.053-1.273-.069-1.654-.069-4.858 0-3.204.016-3.585.069-4.858L2.725 0c3.045 0 3.488.016 4.636.069a6.007 6.007 0 011.697 1.054A6.007 6.007 0 0111.996 2.163zm0 2.228c-.808 0-1.58.016-2.482.054L8.72 4.414c-1.428.069-1.92.176-2.813.528A3.757 3.757 0 004.425 6.945c-.352.893-.459 1.385-.528 2.813L3.791 10.518c-.038.902-.054 1.674-.054 2.482s.016 1.58.054 2.482l.071 1.082c.069 1.428.176 1.92.528 2.813a3.757 3.757 0 001.092 1.545c.893.352 1.385.459 2.813.528l1.082.071c.902.038 1.674.054 2.482.054s1.58-.016 2.482-.054l1.082-.071c1.428-.069 1.92-.176 2.813-.528a3.757 3.757 0 001.545-1.092c.352-.893.459-1.385.528-2.813l.071-1.082c.038-.902.054-1.674.054-2.482s-.016-1.58-.054-2.482l-.071-1.082c-.069-1.428-.176-1.92-.528-2.813A3.757 3.757 0 0019.232 4.095c-.893-.352-1.385-.459-2.813-.528L15.337 3.496c-.902-.038-1.674-.054-2.482-.054zm0 1.831c2.193 0 3.29 0 3.82.029a1.865 1.865 0 01.99.198c.45.187.825.462 1.134.771a1.865 1.865 0 01.771 1.134c.187.45.289.98.289 1.944s-.102 1.494-.289 1.944a1.865 1.865 0 01-.771 1.134c-.309.309-.684.584-1.134.771a1.865 1.865 0 01-1.026.045c-.53-.029-1.627-.045-3.82-.045s-3.29.016-3.82.045a1.865 1.865 0 01-1.026-.045c-.45-.187-.825-.462-1.134-.771a1.865 1.865 0 01-.771-1.134c-.187-.45-.289-.98-.289-1.944s.102-1.494.289-1.944a1.865 1.865 0 01.771-1.134c.309-.309.684-.584 1.134-.771a1.865 1.865 0 011.026-.045c.53-.029 1.627-.045 3.82-.045zM12 9.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm0 1.884a.616.616 0 110 1.232.616.616 0 010-1.232z" clip-rule="evenodd" />
+                    </svg>
+                    Instagram
+                </a>
+            </div>
+
+            <!-- Aviso sobre o Áudio de Exemplo -->
+            <div class="mt-8 text-white text-sm opacity-80 max-w-sm">
+                <p class="font-bold">Atenção:</p>
+                <p>Este reprodutor está usando uma estação de rádio de exemplo. Para a sua rádio funcionar, você deve substituir o link "src" no código pelo link do seu próprio stream de áudio.</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
